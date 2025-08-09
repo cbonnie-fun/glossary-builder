@@ -1,0 +1,233 @@
+{
+  "API": {
+    "definition": "Application Programming Interface - A set of rules and protocols that allows different software applications to communicate with each other.",
+    "category": "Software Development",
+    "examples": [
+      "REST API for web services",
+      "GraphQL API for flexible data queries"
+    ],
+    "related": ["REST", "GraphQL", "SDK"]
+  },
+  "REST": {
+    "definition": "Representational State Transfer - An architectural style for designing networked applications using HTTP methods.",
+    "category": "Web Development",
+    "examples": [
+      "GET /users to retrieve user data",
+      "POST /products to create a new product"
+    ],
+    "related": ["API", "HTTP", "CRUD"]
+  },
+  "GraphQL": {
+    "definition": "A query language and runtime for APIs that allows clients to request exactly the data they need.",
+    "category": "Web Development",
+    "examples": [
+      "Query specific fields from multiple resources in a single request"
+    ],
+    "related": ["API", "REST", "Schema"]
+  },
+  "Docker": {
+    "definition": "A platform for developing, shipping, and running applications in containers, ensuring consistency across different environments.",
+    "category": "DevOps",
+    "examples": [
+      "docker build -t myapp .",
+      "docker run -p 8080:80 myapp"
+    ],
+    "related": ["Container", "Kubernetes", "Microservices"]
+  },
+  "Kubernetes": {
+    "definition": "An open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications.",
+    "category": "DevOps",
+    "examples": [
+      "kubectl apply -f deployment.yaml",
+      "kubectl scale deployment myapp --replicas=3"
+    ],
+    "related": ["Docker", "Container", "Orchestration"]
+  },
+  "Microservices": {
+    "definition": "An architectural style that structures an application as a collection of small, independent services that communicate through APIs.",
+    "category": "Architecture",
+    "examples": [
+      "User service, Order service, Payment service as separate components"
+    ],
+    "related": ["API", "Docker", "Kubernetes", "Service Mesh"]
+  },
+  "CI/CD": {
+    "definition": "Continuous Integration and Continuous Deployment - Practices that automate the building, testing, and deployment of applications.",
+    "category": "DevOps",
+    "examples": [
+      "GitHub Actions workflow",
+      "Jenkins pipeline",
+      "GitLab CI/CD"
+    ],
+    "related": ["DevOps", "Automation", "Pipeline"]
+  },
+  "Git": {
+    "definition": "A distributed version control system for tracking changes in source code during software development.",
+    "category": "Version Control",
+    "examples": [
+      "git commit -m 'Add new feature'",
+      "git push origin main"
+    ],
+    "related": ["GitHub", "Version Control", "Repository"]
+  },
+  "JSON": {
+    "definition": "JavaScript Object Notation - A lightweight data interchange format that is easy for humans to read and write.",
+    "category": "Data Format",
+    "examples": [
+      "{\"name\": \"John\", \"age\": 30}",
+      "API response in JSON format"
+    ],
+    "related": ["API", "REST", "XML", "YAML"]
+  },
+  "Database": {
+    "definition": "An organized collection of structured data stored and accessed electronically from a computer system.",
+    "category": "Data Storage",
+    "examples": [
+      "MySQL relational database",
+      "MongoDB NoSQL database"
+    ],
+    "related": ["SQL", "NoSQL", "Schema", "CRUD"]
+  },
+  "SQL": {
+    "definition": "Structured Query Language - A standard language for managing and manipulating relational databases.",
+    "category": "Database",
+    "examples": [
+      "SELECT * FROM users WHERE age > 18",
+      "INSERT INTO products (name, price) VALUES ('Widget', 9.99)"
+    ],
+    "related": ["Database", "Query", "Schema"]
+  },
+  "NoSQL": {
+    "definition": "Not Only SQL - Database systems that store and retrieve data in formats other than tabular relations used in relational databases.",
+    "category": "Database",
+    "examples": [
+      "MongoDB for document storage",
+      "Redis for key-value storage"
+    ],
+    "related": ["Database", "MongoDB", "Redis"]
+  },
+  "Cache": {
+    "definition": "A temporary storage area that holds frequently accessed data for quick retrieval, improving application performance.",
+    "category": "Performance",
+    "examples": [
+      "Redis cache for session data",
+      "Browser cache for static assets"
+    ],
+    "related": ["Redis", "Performance", "Memory"]
+  },
+  "Load Balancer": {
+    "definition": "A device or software that distributes network traffic across multiple servers to ensure no single server is overwhelmed.",
+    "category": "Infrastructure",
+    "examples": [
+      "NGINX load balancer",
+      "AWS Elastic Load Balancer"
+    ],
+    "related": ["Scalability", "High Availability", "Server"]
+  },
+  "Encryption": {
+    "definition": "The process of converting data into a coded format to prevent unauthorized access.",
+    "category": "Security",
+    "examples": [
+      "AES-256 encryption",
+      "HTTPS for secure web communication"
+    ],
+    "related": ["Security", "SSL/TLS", "Authentication"]
+  },
+  "Authentication": {
+    "definition": "The process of verifying the identity of a user or system before granting access to resources.",
+    "category": "Security",
+    "examples": [
+      "Username and password login",
+      "OAuth 2.0 authentication",
+      "Two-factor authentication (2FA)"
+    ],
+    "related": ["Authorization", "Security", "OAuth"]
+  },
+  "OAuth": {
+    "definition": "An open standard for authorization that allows users to grant third-party applications access to their resources without sharing passwords.",
+    "category": "Security",
+    "examples": [
+      "Login with Google",
+      "GitHub OAuth for application access"
+    ],
+    "related": ["Authentication", "Authorization", "JWT"]
+  },
+  "JWT": {
+    "definition": "JSON Web Token - A compact, URL-safe means of representing claims to be transferred between two parties.",
+    "category": "Security",
+    "examples": [
+      "Bearer token in API requests",
+      "Session tokens for user authentication"
+    ],
+    "related": ["Authentication", "OAuth", "Token"]
+  },
+  "Webhook": {
+    "definition": "An HTTP callback that sends real-time data to other applications when specific events occur.",
+    "category": "Integration",
+    "examples": [
+      "GitHub webhook for commit notifications",
+      "Payment gateway webhook for transaction updates"
+    ],
+    "related": ["API", "HTTP", "Event-driven"]
+  },
+  "Machine Learning": {
+    "definition": "A subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed.",
+    "category": "AI/ML",
+    "examples": [
+      "Image classification models",
+      "Natural language processing",
+      "Recommendation systems"
+    ],
+    "related": ["AI", "Neural Network", "Deep Learning"]
+  },
+  "Cloud Computing": {
+    "definition": "The delivery of computing services including servers, storage, databases, networking, and software over the internet.",
+    "category": "Infrastructure",
+    "examples": [
+      "AWS EC2 instances",
+      "Google Cloud Platform",
+      "Microsoft Azure"
+    ],
+    "related": ["SaaS", "PaaS", "IaaS", "Serverless"]
+  },
+  "Serverless": {
+    "definition": "A cloud computing model where the cloud provider manages the infrastructure, allowing developers to focus on code without managing servers.",
+    "category": "Cloud Computing",
+    "examples": [
+      "AWS Lambda functions",
+      "Azure Functions",
+      "Vercel Edge Functions"
+    ],
+    "related": ["Cloud Computing", "FaaS", "Lambda"]
+  },
+  "Agile": {
+    "definition": "An iterative approach to software development that emphasizes flexibility, collaboration, and rapid delivery of working software.",
+    "category": "Methodology",
+    "examples": [
+      "Scrum framework",
+      "Two-week sprints",
+      "Daily standup meetings"
+    ],
+    "related": ["Scrum", "Sprint", "DevOps"]
+  },
+  "Scrum": {
+    "definition": "An agile framework for managing product development, emphasizing teamwork, accountability, and iterative progress.",
+    "category": "Methodology",
+    "examples": [
+      "Sprint planning meetings",
+      "Product backlog management",
+      "Sprint retrospectives"
+    ],
+    "related": ["Agile", "Sprint", "Product Owner"]
+  },
+  "DevOps": {
+    "definition": "A set of practices that combines software development and IT operations to shorten the development lifecycle and deliver high-quality software continuously.",
+    "category": "Methodology",
+    "examples": [
+      "Automated deployment pipelines",
+      "Infrastructure as Code",
+      "Continuous monitoring"
+    ],
+    "related": ["CI/CD", "Automation", "Monitoring"]
+  }
+}
