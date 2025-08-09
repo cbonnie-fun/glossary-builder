@@ -129,19 +129,6 @@ the data they need, reducing over-fetching compared to REST APIs.
 📚 [Documentation](https://graphql.org/learn/)
 ```
 
-## API Costs
-
-The tool uses two Claude models for optimal cost-efficiency:
-- **Claude 3 Haiku**: For fast, cheap initial term extraction
-- **Claude 3 Sonnet**: For high-quality definition generation
-
-Typical costs:
-- Small document (1-2 pages): ~$0.001
-- Medium document (5-10 pages): ~$0.005
-- Large document (20+ pages): ~$0.02
-
-Use `--estimate-cost` to preview costs before processing.
-
 ## Use Cases
 
 - 📝 **Technical Blogs**: Automatically generate glossaries for blog posts
@@ -175,11 +162,3 @@ The repository also includes `glossary_builder.py`, which uses a pre-defined JSO
 - Consistent term definitions across projects
 - Offline usage without API access
 - Complete control over term selection
-
-## License
-
-MIT License - Feel free to use and modify as needed.
-
-## Contributing
-
-Contributions are welcome! Feel free to submit issues or pull requests.
