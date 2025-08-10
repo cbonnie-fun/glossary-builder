@@ -1,19 +1,29 @@
-# AI-Powered Glossary Builder
+# Technical terms glossary builder
 
 An intelligent Python CLI tool that uses Claude AI to automatically extract technical terms from documentation and generate contextual glossaries tailored to different expertise levels.
 
 ## Features
 
-- 🤖 **AI-Powered Extraction**: Uses Claude to intelligently identify technical terms that your target audience might not understand
-- 🎯 **Audience-Aware**: Configurable expertise levels (junior, mid, senior developers)
-- 📚 **Smart Definitions**: Generates both general and context-specific definitions
-- 🔗 **Documentation Links**: Automatically adds links to official documentation
-- 💰 **Cost Estimation**: Preview API costs before processing
-- 📊 **Multiple Output Formats**: Markdown, HTML, JSON, plain text, or interactive tables
-- ⚡ **Efficient Processing**: Handles large documents through intelligent chunking
-- 🎨 **Beautiful Output**: Rich terminal UI with progress indicators
+- **AI-powered extraction**: Uses Claude to intelligently identify technical terms that your target audience might not understand
+- **Audience-aware**: Configurable expertise levels (junior, mid, senior developers)
+- **Smart definitions**: Generates both general and context-specific definitions
+- **Documentation links**: Automatically adds links to official documentation
+- **Cost estimation**: Preview API costs before processing
+- **Multiple output formats**: Markdown, HTML, JSON, plain text, or interactive tables
+- **Efficient processing**: Handles large documents through intelligent chunking
+- **Beautiful output**: Rich terminal UI with progress indicators
 
-## Installation
+## How It Works
+
+1. The tool reads and analyzes your technical documentation.
+2. Claude AI analyzes the content and identifies terms that might be unfamiliar to your target audience.
+3. For each term, Claude generates:
+   - A clear, concise definition appropriate for the expertise level
+   - Context-specific notes about how the term is used in your document
+   - Links to official documentation when available
+4. The tool automatically limits to 8 most important terms to maintain focus and readability.
+
+## Install the glossary builder
 
 1. Clone the repository:
 ```bash
@@ -40,7 +50,7 @@ cp .env.example .env
 
 Get your API key from [Anthropic Console](https://console.anthropic.com/)
 
-## Usage
+## Example input
 
 ### Basic Usage
 
@@ -78,13 +88,6 @@ Export as JSON:
 python glossary_builder_ai.py doc.md --format json --output terms.json
 ```
 
-### Cost Estimation
-
-Preview API costs before processing:
-```bash
-python glossary_builder_ai.py large_doc.md --estimate-cost
-```
-
 ### Command Options
 
 - `FILE`: Path to the document to analyze (required)
@@ -94,16 +97,6 @@ python glossary_builder_ai.py large_doc.md --estimate-cost
 - `--format, -f`: Output format - markdown, json, html, plain, or table (default: markdown)
 - `--estimate-cost`: Show estimated API costs before processing
 - `--no-progress`: Disable progress indicators
-
-## How It Works
-
-1. **Document Analysis**: The tool reads your technical documentation
-2. **Intelligent Extraction**: Claude AI analyzes the content and identifies terms that might be unfamiliar to your target audience
-3. **Contextual Definitions**: For each term, Claude generates:
-   - A clear, concise definition appropriate for the expertise level
-   - Context-specific notes about how the term is used in your document
-   - Links to official documentation when available
-4. **Smart Limiting**: Automatically limits to 8 most important terms to maintain focus and readability
 
 ## Example Output
 
