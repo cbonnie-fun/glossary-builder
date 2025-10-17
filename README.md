@@ -1,104 +1,104 @@
-# Technical terms glossary builder
+# Define technical terms with an AI-driven glossary builder
 
-An intelligent Python CLI tool that uses Claude AI to automatically extract technical terms from documentation and generate contextual glossaries tailored to different expertise levels.
+This README describes how to install and use a Python CLI tool that extracts technical terms from documents and creates glossaries that are tailored to audiences with different expertise levels.
 
-## Features
-
-- **AI-powered extraction**: Uses Claude to intelligently identify technical terms that your target audience might not understand
-- **Audience-aware**: Configurable expertise levels (junior, mid, senior developers)
-- **Smart definitions**: Generates both general and context-specific definitions
-- **Documentation links**: Automatically adds links to official documentation
-- **Cost estimation**: Preview API costs before processing
-- **Multiple output formats**: Markdown, HTML, JSON, plain text, or interactive tables
-- **Efficient processing**: Handles large documents through intelligent chunking
-- **Beautiful output**: Rich terminal UI with progress indicators
+To use these instructions, you'll need to have an Anthropic account with an API key.
 
 ## How It Works
 
 1. The tool reads and analyzes your technical documentation.
 2. Claude AI analyzes the content and identifies terms that might be unfamiliar to your target audience.
 3. For each term, Claude generates:
-   - A clear, concise definition appropriate for the expertise level
+   - A clear, concise definition appropriate for the expertise level of the target audience
    - Context-specific notes about how the term is used in your document
    - Links to official documentation when available
-4. The tool automatically limits to 8 most important terms to maintain focus and readability.
+
+The tool automatically limits results to 8 most important terms to maintain focus and readability.
 
 ## Install the glossary builder
 
-1. Clone the repository:
+1. Clone the glossary builder repository:
+
 ```bash
-git clone https://github.com/yourusername/glossary-builder.git
+git clone https://github.com/your-username/glossary-builder.git
 cd glossary-builder
 ```
 
 2. Create a virtual environment:
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install dependencies:
+3. Install the required dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. Set up your Anthropic API key:
+
 ```bash
 cp .env.example .env
 # Edit .env and add your API key
 ```
 
-Get your API key from [Anthropic Console](https://console.anthropic.com/)
+To get your Anthropic API key, use the [Anthropic Console](https://console.anthropic.com/).
 
-## Example input
+## Run the Python command
 
-### Basic Usage
+Use the glossary builder to extract and define terms from a technical document:
 
-Extract and define technical terms from a document:
 ```bash
-python glossary_builder_ai.py article.md
+python glossary_builder_ai.py example-document.md
 ```
 
-### Specify Expertise Level
+Available command flags are the following:
 
-Target senior developers (will extract fewer, more complex terms):
+- `FILE`: The path to the document to analyze. Required.
+- `--api-key`: Your Anthropic API key. If not set, the value of the `ANTHROPIC_API_KEY` environment variable is used.
+- `--expertise-level, -e`: The target audience level. Values are: `junior`, `mid`, or `senior`. If not set, defaults to `junior`.
+- `--output, -o`: The output file path. If not set, prints to stdout.
+- `--format, -f`: The output format. Values are: `markdown`, `json`, `html`, `plain`, or `table`. If not set, defaults to `markdown`.
+- `--estimate-cost`: Show estimated API costs before processing.
+- `--no-progress`: Disable progress indicators.
+
+### Example commands
+
+#### Specify an audience expertise level
+
+The glossary builder generates fewer, more complex terms for **senior developers** and more terms with simpler explanations for **junior developers**.
+
 ```bash
 python glossary_builder_ai.py blog_post.md --expertise-level senior
 ```
 
-Target junior developers (default - extracts more terms with simpler explanations):
 ```bash
 python glossary_builder_ai.py tutorial.md --expertise-level junior
 ```
 
-### Output Formats
+#### Control output formats
 
-Generate HTML glossary:
+Generate an HTML glossary as output:
+
 ```bash
 python glossary_builder_ai.py doc.md --format html --output glossary.html
 ```
 
-Display as interactive table:
+Display the output as an interactive table:
+
 ```bash
 python glossary_builder_ai.py doc.md --format table
 ```
 
-Export as JSON:
+Export the output as JSON:
+
 ```bash
 python glossary_builder_ai.py doc.md --format json --output terms.json
 ```
 
-### Command Options
-
-- `FILE`: Path to the document to analyze (required)
-- `--api-key`: Anthropic API key (can also use ANTHROPIC_API_KEY env var)
-- `--expertise-level, -e`: Target audience level - junior, mid, or senior (default: junior)
-- `--output, -o`: Output file path (if not specified, prints to stdout)
-- `--format, -f`: Output format - markdown, json, html, plain, or table (default: markdown)
-- `--estimate-cost`: Show estimated API costs before processing
-- `--no-progress`: Disable progress indicators
-
-## Example Output
+### Example Output
 
 ```markdown
 # Technical Glossary
@@ -121,37 +121,3 @@ the data they need, reducing over-fetching compared to REST APIs.
 
 📚 [Documentation](https://graphql.org/learn/)
 ```
-
-## Use Cases
-
-- 📝 **Technical Blogs**: Automatically generate glossaries for blog posts
-- 📚 **Documentation**: Add glossaries to API docs or tutorials
-- 🎓 **Educational Content**: Create learning aids for technical courses
-- 👥 **Onboarding**: Generate glossaries for team documentation
-- 🎯 **Content Accessibility**: Make technical content more accessible
-
-## Development
-
-### Project Structure
-```
-glossary-builder/
-├── glossary_builder_ai.py  # Main AI-powered CLI tool
-├── glossary_builder.py      # Original JSON-based version
-├── requirements.txt         # Python dependencies
-├── .env.example            # Example environment variables
-├── docs/                   # Sample documentation
-└── README.md              # This file
-```
-
-### Extending the Tool
-
-- **Add More Doc Links**: Edit the `DOC_LINKS` dictionary in `glossary_builder_ai.py`
-- **Customize Prompts**: Modify the extraction and definition prompts for different use cases
-- **Add Expertise Levels**: Extend `EXPERTISE_LEVELS` for more granular targeting
-
-## Original Version
-
-The repository also includes `glossary_builder.py`, which uses a pre-defined JSON database of terms instead of AI. This version is useful for:
-- Consistent term definitions across projects
-- Offline usage without API access
-- Complete control over term selection
