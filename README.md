@@ -6,7 +6,7 @@ To use these instructions, you'll need to have an Anthropic account with an API 
 
 ## How It Works
 
-1. The tool reads and analyzes your technical documentation.
+1. The tool reads the technical documentation you specify.
 2. Claude AI analyzes the content and identifies terms that might be unfamiliar to your target audience.
 3. For each term, Claude generates:
    - A clear, concise definition appropriate for the expertise level of the target audience
